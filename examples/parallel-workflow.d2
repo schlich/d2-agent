@@ -1,0 +1,44 @@
+# Parallel Processing Workflow
+# Multiple agents working simultaneously
+
+direction: down
+
+Coordinator: {
+  shape: hexagon
+  label: "Coordinator\nAgent"
+  style.fill: "#bbdefb"
+}
+
+Worker1: {
+  label: "Worker Agent 1\n(Code Generation)"
+  style.fill: "#c8e6c9"
+}
+
+Worker2: {
+  label: "Worker Agent 2\n(Testing)"
+  style.fill: "#fff9c4"
+}
+
+Worker3: {
+  label: "Worker Agent 3\n(Documentation)"
+  style.fill: "#ffccbc"
+}
+
+Results: {
+  shape: cylinder
+  label: "Aggregated\nResults"
+  style.fill: "#e0e0e0"
+}
+
+Coordinator -> Worker1: "Generate code for module A"
+Coordinator -> Worker2: "Generate tests for module A"
+Coordinator -> Worker3: "Generate docs for module A"
+
+Worker1 -> Results: "Code artifacts"
+Worker2 -> Results: "Test artifacts"
+Worker3 -> Results: "Documentation"
+
+Results -> Coordinator: "Complete package" {
+  style.stroke: "#2e7d32"
+  style.stroke-width: 2
+}

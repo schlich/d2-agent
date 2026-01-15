@@ -33,6 +33,8 @@ The agent includes examples of:
 4. **Feedback Loop**: Agents with iterative refinement
 5. **Hierarchical Delegation**: Multi-level agent hierarchies
 
+See the [`examples/`](examples/) directory for complete D2 diagram files demonstrating these patterns.
+
 ## Usage
 
 The agent file can be used with GitHub Copilot to help you:

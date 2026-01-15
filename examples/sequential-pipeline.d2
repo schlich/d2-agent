@@ -1,0 +1,39 @@
+# Sequential Pipeline Workflow
+# Agents processing data in sequence
+
+direction: right
+
+Input: {
+  shape: oval
+  label: "Input\nData"
+  style.fill: "#e8f5e9"
+}
+
+Agent1: {
+  shape: rectangle
+  label: "Parser\nAgent"
+  style.fill: "#bbdefb"
+}
+
+Agent2: {
+  shape: rectangle
+  label: "Transform\nAgent"
+  style.fill: "#c5cae9"
+}
+
+Agent3: {
+  shape: rectangle
+  label: "Validator\nAgent"
+  style.fill: "#d1c4e9"
+}
+
+Output: {
+  shape: oval
+  label: "Output\nData"
+  style.fill: "#fff9c4"
+}
+
+Input -> Agent1: "Raw data"
+Agent1 -> Agent2: "Parsed data"
+Agent2 -> Agent3: "Transformed data"
+Agent3 -> Output: "Validated result"
