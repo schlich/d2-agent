@@ -27,11 +27,11 @@ A custom GitHub Copilot agent that:
 
 The agent includes examples of:
 
-1. **Multi-Agent Orchestration**: A main orchestrator coordinating specialized agents (code, test, review)
-2. **Sequential Pipeline**: Agents processing data in sequence
-3. **Parallel Processing**: Multiple agents working simultaneously
-4. **Feedback Loop**: Agents with iterative refinement
-5. **Hierarchical Delegation**: Multi-level agent hierarchies
+1. **Multi-Agent Orchestration** (`simple-workflow.d2`): A main orchestrator coordinating specialized agents (code, test, review)
+2. **Parallel Processing** (`parallel-workflow.d2`): Multiple agents working simultaneously
+3. **Sequential Pipeline** (`sequential-pipeline.d2`): Agents processing data in sequence
+4. **Feedback Loop** (`feedback-loop.d2`): Agents with iterative refinement
+5. **Hierarchical Delegation**: Multi-level agent hierarchies (demonstrated in the agent file)
 
 See the [`examples/`](examples/) directory for complete D2 diagram files demonstrating these patterns.
 
