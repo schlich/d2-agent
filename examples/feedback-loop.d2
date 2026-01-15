@@ -1,0 +1,50 @@
+# Feedback Loop Workflow
+# Iterative refinement pattern
+
+direction: right
+
+Planner: {
+  shape: hexagon
+  label: "Planning\nAgent"
+  style.fill: "#bbdefb"
+}
+
+Executor: {
+  shape: rectangle
+  label: "Execution\nAgent"
+  style.fill: "#c8e6c9"
+}
+
+Evaluator: {
+  shape: rectangle
+  label: "Evaluation\nAgent"
+  style.fill: "#fff9c4"
+}
+
+Complete: {
+  shape: oval
+  label: "Success"
+  style.fill: "#c8e6c9"
+  style.stroke: "#2e7d32"
+  style.stroke-width: 2
+}
+
+Planner -> Executor: "Execute plan" {
+  label: "1. Plan"
+}
+
+Executor -> Evaluator: "Check results" {
+  label: "2. Execute"
+}
+
+Evaluator -> Planner: "Needs improvement" {
+  label: "3. Feedback (iterate)"
+  style.stroke-dash: 3
+  style.stroke: "#f57c00"
+}
+
+Evaluator -> Complete: "Meets criteria" {
+  label: "4. Success"
+  style.stroke: "#2e7d32"
+  style.stroke-width: 2
+}

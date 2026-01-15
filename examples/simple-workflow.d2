@@ -1,0 +1,84 @@
+# Simple Agent Workflow Example
+# This demonstrates a basic multi-agent workflow
+
+direction: right
+
+User: {
+  shape: person
+  label: "User"
+}
+
+Orchestrator: {
+  shape: hexagon
+  label: "Orchestrator Agent"
+  style: {
+    fill: "#e1f5fe"
+    stroke: "#01579b"
+  }
+}
+
+CodeAgent: {
+  shape: rectangle
+  label: "Code Agent"
+  style: {
+    fill: "#f3e5f5"
+    stroke: "#4a148c"
+  }
+}
+
+TestAgent: {
+  shape: rectangle
+  label: "Test Agent"
+  style: {
+    fill: "#e8f5e9"
+    stroke: "#1b5e20"
+  }
+}
+
+ReviewAgent: {
+  shape: rectangle
+  label: "Review Agent"
+  style: {
+    fill: "#fff3e0"
+    stroke: "#e65100"
+  }
+}
+
+# Agent Communication Flow
+User -> Orchestrator: "Create feature X" {
+  style.stroke: "#333"
+  style.stroke-width: 2
+}
+
+Orchestrator -> CodeAgent: "Implement feature" {
+  label: "1. Task Delegation"
+}
+
+CodeAgent -> Orchestrator: "Code changes" {
+  label: "2. Return Result"
+  style.stroke-dash: 3
+}
+
+Orchestrator -> TestAgent: "Run tests" {
+  label: "3. Validate"
+}
+
+TestAgent -> Orchestrator: "Test results" {
+  label: "4. Feedback"
+  style.stroke-dash: 3
+}
+
+Orchestrator -> ReviewAgent: "Review code" {
+  label: "5. Quality Check"
+}
+
+ReviewAgent -> Orchestrator: "Approval/Issues" {
+  label: "6. Assessment"
+  style.stroke-dash: 3
+}
+
+Orchestrator -> User: "Feature complete" {
+  label: "7. Final Result"
+  style.stroke: "#2e7d32"
+  style.stroke-width: 3
+}
